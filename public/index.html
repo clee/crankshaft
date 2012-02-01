@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Gingr Mail</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="stylesheets/bootstrap.css" rel="stylesheet" />
+    <link href="stylesheets/bootstrap.responsive.css" rel="stylesheet" />
+    <link href="stylesheets/style.css" rel="stylesheet" />
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="i-bar"></span>
+            <span class="i-bar"></span>
+            <span class="i-bar"></span>
+          </a>
+          <a class="brand" href="#">Gingr Mail</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="" title="Contacts">Contacts</a></li>
+              <li><a href="" title="Profile">Profile</a></li>
+              <li><a href="" title="Account">Account</a></li>
+              <li><a href="" title="Sign Out">Sign Out</a></li>
+            </ul>
+            <p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          
+          <div id="folders" class="btn-group">
+            <a class="btn folder-btn" href="#">Inbox</a>
+            <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- dropdown menu links -->
+              <li class="active"><a href="#"><i class="icon-inbox"></i> Inbox</a></li>
+              <li><a href="#"><i class="icon-share-alt"></i> Sent</a></li>
+              <li><a href="#"><i class="icon-folder-open"></i> Archive</a></li>
+              <li><a href="#"><i class="icon-ban-circle"></i> Spam</a></li>
+              <li><a href="#"><i class="icon-trash"></i> Trash</a></li>
+            </ul>
+          </div>
+
+          <div class="well sidebar-nav">
+          <script type="text/x-handlebars">
+            <ul class="nav nav-list">
+              <li class="nav-header">Account Name</li>
+              {{#each Crankshaft.messagePreviews}}
+              <li>
+                <ul class="email-msg">
+                    <li class="from">{{from}}</li>
+                    <li class="date">{{datetime}}</li>
+                    <li class="subj">{{subject}}</li>
+                    <li class="desc">...</li>
+                </ul>
+              </li>
+              {{/each}}
+            </ul>
+          </script>
+          </div><!--/.well -->        
+        </div><!--/span-->
+
+        <div class="span9">
+          <div class="hero-unit">
+            <h3>Conversation Here</h3>
+            <p>Obv need to get this rolling</p>
+          </div>
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>&copy; Gingr 2012</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="javascripts/jquery.js"></script>
+    <script src="javascripts/bootstrap-transition.js"></script>
+    <script src="javascripts/bootstrap-dropdown.js"></script>
+    <script src="javascripts/ember-0.9.4.min.js"></script>
+    <script src="javascripts/moment.min.js"></script>
+    <script src="javascripts/app.js"></script>
+  </body>
+</html>
