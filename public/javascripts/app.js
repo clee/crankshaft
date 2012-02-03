@@ -32,3 +32,6 @@ Crankshaft.messagePreviews = Em.ArrayProxy.create({
         });
     }.property("@each.date").cacheable() */
 });
+
+
+$('.sidebar-nav').height(window.outerHeight - 300);
