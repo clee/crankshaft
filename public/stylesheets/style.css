@@ -134,6 +134,7 @@ a {
 	width: 230px;
 }
 
-.msg-actions .btn-group a {
+.msg-actions .btn-group .btn {
+	color: #08C;
 	font-size: 10px;
 }
