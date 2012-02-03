@@ -26,6 +26,19 @@ a {
 	height: 100%;
 }
 
+#email-app .nav-container a {
+	color: #444;
+}
+
+#email-app .nav-container .active {
+	color: #fff;
+}
+
+#email-app .nav-container .active:hover {
+	color: #2996CC;
+	text-shadow: none;
+}
+
 .sidebar-nav {
   height: 90%;
 	overflow-x: hidden;
@@ -82,5 +95,45 @@ a {
 }
 
 .email-msg .desc {
-  
+  /* customize later if need be */
+}
+
+/* Current Msg */
+#msg-list {
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	background-color: whiteSmoke;
+	margin-bottom: 30px;
+	padding: 10px 20px;
+}
+
+.msg-headers ul {
+	border-bottom: 1px solid #ddd;
+	font-size: 12px;
+	list-style-type: none;
+	padding-bottom: 25px;
+}
+
+.msg-headers em {
+	color: #888;
+	display: inline-block;
+	font-weight: bold;
+	text-align: right;
+	margin-right: 7px;
+	width: 60px;
+}
+
+.msg-actions {
+	margin-top: -25px;
+	text-align: center;
+}
+
+.msg-actions .btn-group {
+	margin: 0 auto;
+	width: 230px;
+}
+
+.msg-actions .btn-group a {
+	font-size: 10px;
 }

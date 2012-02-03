@@ -2086,7 +2086,7 @@ button.btn.small, input[type="submit"].btn.small {
 }
 .nav > li > a:hover {
   text-decoration: none;
-  background-color: #eeeeee;
+  background-color: #ddd;
 }
 .nav-list {
   padding-left: 14px;
@@ -2113,7 +2113,7 @@ button.btn.small, input[type="submit"].btn.small {
 .nav-list .active > a {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-color: #0088cc;
+  background-color: #2996cc;
 }
 .nav-list .icon {
   margin-right: 2px;

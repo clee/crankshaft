@@ -73,12 +73,14 @@
               <li class="nav-header">Account Name</li>
               {{#each Crankshaft.messagePreviews}}
               <li>
-                <ul class="email-msg">
-                    <li class="from">{{from}}</li>
-                    <li class="date">{{datetime}}</li>
-                    <li class="subj">{{subject}}</li>
-                    <li class="desc">...</li>
-                </ul>
+                <a href="#" class="email-msg">
+                  <ul>
+                      <li class="from">{{from}}</li>
+                      <li class="date">{{datetime}}</li>
+                      <li class="subj">{{subject}}</li>
+                      <li class="desc">...</li>
+                  </ul>
+                </a>
               </li>
               {{/each}}
             </ul>
@@ -87,9 +89,23 @@
         </div><!--/span-->
 
         <div class="span9">
-          <div class="hero-unit">
-            <h3>Conversation Here</h3>
-            <p>Obv need to get this rolling</p>
+          <div id="msg-list">
+            <header class="msg-headers">
+              <ul>
+                <li><em>From:</em> <strong>tonyjcamp@gmail.com</strong></li>
+                <li><em>Subject:</em> King of Nipples</li>
+                <li><em>Date:</em> Today</li>
+                <li><em>To:</em> clee@mg8.org</li>
+              </ul>
+              <div class="msg-actions">
+                  <div class="btn-group">
+                    <a class="btn" href="#">delete</a>
+                    <a class="btn" href="#">reply</a>
+                    <a class="btn" href="#">reply all</a>
+                    <a class="btn" href="#">fwd</a>
+                </div>
+              </div><!-- /msg-actions -->
+            </header><!-- /header -->
           </div>
         </div><!--/span-->
       </div><!--/row-->
