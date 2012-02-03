@@ -81,6 +81,11 @@ a {
   text-indent: none;
 }
 
+.email-msg.active {
+	background-color: #08C;
+	text-shadow: none;
+}
+
 .email-msg .from {
   float: left;
   font-size: 14px;
