@@ -33,5 +33,18 @@ Crankshaft.messagePreviews = Em.ArrayProxy.create({
     }.property("@each.date").cacheable() */
 });
 
+Crankshaft.adjustNav = function() {
+    $('.sidebar-nav').height(window.outerHeight - 300);
+};
 
-$('.sidebar-nav').height(window.outerHeight - 300);
+Crankshaft.resizer = function() {
+    $(window).resize(function() {
+        window.setTimeout(function() {
+            Crankshaft.adjustNav();
+        }, 1000);
+
+    });
+};
+
+Crankshaft.adjustNav();
+Crankshaft.resizer();
