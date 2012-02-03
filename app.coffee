@@ -27,7 +27,7 @@ app.get '/', (req, res) ->
 	res.redirect '/index.html'
 
 app.get '/messages', (req, res) ->
-	md = new Maildir '/home/clee/tmp/Maildir'
+	md = new Maildir '/home/clee/sample'
 
 	res.header 'Content-Type', 'text/event-stream'
 	res.header 'Cache-Control', 'no-cache'
@@ -44,7 +44,7 @@ app.get '/messages', (req, res) ->
 	md.monitor()
 
 app.get '/messages/:id', (req, res) ->
-	md = new Maildir '/home/clee/tmp/Maildir'
+	md = new Maildir '/home/clee/sample'
 	id = req.params.id
 	md.loadMessage id, (message) ->
 		res.json message
