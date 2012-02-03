@@ -1,14 +1,33 @@
+ html {
+	height: 100%;
+}
+
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  height: 90%;
+  padding: 5% 50px 0 50px;
 }
 
 a {
   color: #00B7FF;
 }
 
+#email-app {
+	height: 90%;
+}
+
+#email-app > .row-fluid {
+	height: 100%;
+	min-height: 385px;
+	margin-bottom: 0;
+}
+
+#email-app .nav-container {
+	height: 100%;
+}
+
 .sidebar-nav {
-	min-height: 200px;
+  height: 90%;
 	overflow-x: hidden;
 	overflow-y: auto;
   padding: 9px 0;
@@ -23,9 +42,9 @@ a {
 }
 
 #folders .folder-btn {
-  width: 73%;
   margin-right: 0;
   padding: 4px 5.5%;
+  width: 73%;
 }
 
 #folders .dropdown-toggle {
@@ -47,8 +66,8 @@ a {
 
 .email-msg .from {
   float: left;
-  font-weight: bold;
   font-size: 14px;
+  font-weight: bold;
 }
 
 .email-msg .date{
