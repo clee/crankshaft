@@ -39,9 +39,11 @@ app.get '/messages', (req, res) ->
 		constructMessage res, id, message
 
 	md.files.forEach (f, i) ->
-		md.loadMessage i, (message) ->
+		md.loadMessage f, (message) ->
 			constructMessage res, id, message
 	md.monitor()
+	res.on 'close', ->
+		md.shutdown()
 
 app.get '/messages/:id', (req, res) ->
 	md = new Maildir '/home/clee/sample'
