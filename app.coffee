@@ -1,30 +1,24 @@
 # Module dependencies.
 
-express = require "express"
+connect = require "connect"
+restify = require "restify"
 Maildir = require "maildir"
 
-app = module.exports = express.createServer()
+app = module.exports = restify.createServer()
 
 # Configuration
-
-app.configure ->
-	# app.set 'views', "#{__dirname}/views"
-	# app.set 'view engine', 'jade'
-	app.use express.bodyParser()
-	app.use express.methodOverride()
-	app.use app.router
-	app.use express.static "#{__dirname}/public"
-
-app.configure 'development', ->
-	app.use express.errorHandler { dumpExceptions: true, showStack: true }
-
-app.configure 'production', ->
-	app.use express.errorHandler()
+app.use connect.logger()
+static_handler = connect.static "#{__dirname}/public"
+app.get /\/public\/*/, (req, res, next) ->
+	req.url = req.url.substr "/public".length
+	static_handler req, res, next
 
 # Routes
-app.get '/', (req, res) ->
+app.get '/', (req, res, next) ->
 	# would be nice to just render without a redirect. Good Enough™ for now
-	res.redirect '/index.html'
+	res.header 'Location', '/public/index.html'
+	res.send 302
+	next false
 
 app.get '/messages', (req, res) ->
 	md = new Maildir '/home/clee/sample'
@@ -57,4 +51,5 @@ constructMessage = (res, id, message) ->
 	res.write "data: #{JSON.stringify message?.headers}\n\n"
 
 app.listen process.env.PORT || 3000
-console.log "Express server listening on port %d in %s mode", app.address().port, app.settings.env
+app.on 'listening', ->
+	console.log "crankshaft server listening on port %d", app.address().port

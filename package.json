@@ -10,7 +10,8 @@
     "main": "app",
     "homepage": "https://github.com/clee/crankshaft",
     "dependencies": {
-        "express": ">=2.5.5",
+        "connect": ">=2.4.0",
+        "restify": ">=1.4.0",
         "maildir": ">=0.5.0"
     },
     "repository": {
